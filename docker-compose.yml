@@ -12,6 +12,15 @@ services:
     ports:
       - "5432:5432"
 
+  # Service for running migrations
+  migrate:
+    build: .
+    command: npm run migrate:up
+    environment:
+      DATABASE_URL: postgres://postgres:password@db:5432/postgres
+    depends_on:
+      - db
+
   server:
     build: .
     command: npm start
@@ -21,6 +30,7 @@ services:
       - "3000:3000"
     depends_on:
       - db
+      - migrate
 
   worker:
     build: .
@@ -29,6 +39,7 @@ services:
       DATABASE_URL: postgres://postgres:password@db:5432/postgres
     depends_on:
       - db
+      - migrate
 
 volumes:
   db-data:
