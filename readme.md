@@ -8,6 +8,12 @@
 - **Express API:** Provides endpoints to add tasks, list tasks, and reset the database.
 - **Worker Process:** A dedicated worker (with periodic processing) that processes tasks concurrently.
 
+## Docker run
+
+```bash
+docker compose up
+```
+
 ## Installation
 
 1. **Clone the repository:**
@@ -60,3 +66,4 @@
    npm run migrate:down
    npm run migrate:up
    ```
+
