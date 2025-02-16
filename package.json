@@ -1,0 +1,20 @@
+{
+  "scripts": {
+    "start": "ts-node server.ts",
+    "worker": "ts-node worker.ts",
+    "migrate:up": "node-pg-migrate up -f pgmigrate.config.js",
+    "migrate:down": "node-pg-migrate down -f pgmigrate.config.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "express": "^4.21.2",
+    "pg": "^8.13.3"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.13.4",
+    "@types/pg": "^8.11.11",
+    "node-pg-migrate": "^7.9.1",
+    "typescript": "^5.7.3"
+  }
+}
